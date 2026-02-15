@@ -14,7 +14,7 @@ export function Canvas() {
     // 캔버스 크기를 부모 요소에 맞춤
     const resizeCanvas = () => {
       const parent = canvas.parentElement;
-      console.log("parent", parent);
+
       if (parent) {
         canvas.width = parent.clientWidth;
         canvas.height = parent.clientHeight;
