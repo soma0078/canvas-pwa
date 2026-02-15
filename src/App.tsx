@@ -1,13 +1,11 @@
-import { useState } from "react";
 import { Canvas } from "./components/Canvas";
 import { Toolbar } from "./components/Toolbar";
-
+import { useCanvasStore } from "./stores/canvasStore";
 import "./App.css";
-import type { ToolType } from "./types";
 
 function App() {
-  // 현재 선택된 도구 상태
-  const [currentTool, setCurrentTool] = useState<ToolType>("selection");
+  const currentTool = useCanvasStore((state) => state.currentTool);
+  const setCurrentTool = useCanvasStore((state) => state.setCurrentTool);
 
   return (
     <div className="app">

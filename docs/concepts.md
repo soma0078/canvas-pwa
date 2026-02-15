@@ -78,3 +78,44 @@ useEffect(() => {
 ```
 
 이벤트 리스너 등록/해제, DOM 조작, 외부 라이브러리 초기화 등에 사용한다.
+
+---
+
+## Zustand
+
+상태(state)와 액션(action)을 하나의 스토어에서 관리하는 전역 상태 관리 라이브러리.
+
+스토어는 **상태(값) + 액션(값을 바꾸는 함수)** 두 가지로 구성된다.
+
+### 스토어 생성
+
+```ts
+const useStore = create<StoreType>((set) => ({
+  // 상태 (초기값)
+  count: 0,
+
+  // 액션
+  increment: () => set((state) => ({ count: state.count + 1 })),
+}));
+```
+
+`create`에 함수를 넘기면 훅이 만들어진다. `set`이 상태를 바꾸는 유일한 방법이다.
+
+### 상태 읽기 — selector
+
+```ts
+// 필요한 값만 골라 구독
+const count = useStore((state) => state.count);
+```
+
+selector로 구독한 값이 바뀔 때만 컴포넌트가 리렌더링된다.
+
+### 상태 바꾸기
+
+```ts
+// 단순 교체
+set({ currentTool: "rectangle" });
+
+// 이전 값 기반 업데이트
+set((state) => ({ styleOptions: { ...state.styleOptions, ...options } }));
+```

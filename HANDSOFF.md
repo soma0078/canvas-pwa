@@ -130,10 +130,10 @@ npm run lint     # ESLint 실행
 
 - [x] Step 1-1: Vite + React + TS 셋업
 - [x] Step 1-2: 폴더 구조 & 기본 레이아웃
+- [x] Step 1-3: Zustand 상태관리 기초
 
 ### 진행 예정
 
-- [ ] Step 1-3: Zustand 상태관리 기초
 - [ ] Step 2: 캔버스 기초 (Canvas API, 줌/패닝)
 - [ ] Step 3: 도형 도구
 - [ ] Step 4: 선택 & 편집
